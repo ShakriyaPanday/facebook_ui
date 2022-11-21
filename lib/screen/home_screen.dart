@@ -47,6 +47,12 @@ class HomeScreen extends StatelessWidget {
             child: Rooms(onlineUser: onlineUsers),
           ),
         ),
+        SliverPadding(
+          padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+          sliver: SliverToBoxAdapter(
+            child: Stories(currentUser: currentUser, stories: stories),
+          ),
+        ),
         SliverFillRemaining(
           child: Column(
             children: [Text('some cool text here')],
