@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:facebook/config/palette.dart';
 import 'package:facebook/models/story_model.dart';
 import 'package:facebook/models/user_model.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +53,25 @@ class _storyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(12.0),
+          child: CachedNetworkImage(
+            imageUrl: isAddStory ? currentUser.imageUrl : story.imageUrl,
+            height: double.infinity,
+            width: 110.0,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          width: 110.0,
+          height: double.infinity,
+          decoration: BoxDecoration(
+              gradient: Palette.storyGradient,
+              borderRadius: BorderRadius.circular(12.0)),
+        )
+      ],
+    );
   }
 }
