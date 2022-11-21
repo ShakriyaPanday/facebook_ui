@@ -92,7 +92,10 @@ class _storyCard extends StatelessWidget {
                     ),
                   ),
                 )
-              : ProfileAvatar(imageUrl: story.user.imageUrl),
+              : ProfileAvatar(
+                  imageUrl: story.user.imageUrl,
+                  hasBorder: !story.isViewed,
+                ),
         )
       ],
     );
