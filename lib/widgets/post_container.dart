@@ -203,7 +203,7 @@ class _PostButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               icon,
-              SizedBox(
+              const SizedBox(
                 width: 4.0,
               ),
               Text(label)
