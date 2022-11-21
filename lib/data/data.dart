@@ -1,7 +1,7 @@
 import 'package:facebook/models/models.dart';
 
 final User currentUser = User(
-  name: 'Marcus Ng',
+  name: 'Albert Einstein',
   imageUrl:
       'https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5ODc5NjY5ODU0NjQzMzIy/gettyimages-3091504.jpg',
   //     'https://images.unsplash.com/photo-1578133671540-edad0b3d689e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
