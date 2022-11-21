@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook/config/palette.dart';
 import 'package:facebook/models/story_model.dart';
 import 'package:facebook/models/user_model.dart';
+import 'package:facebook/widgets/profileavator.dart';
 import 'package:flutter/material.dart';
 
 class Stories extends StatelessWidget {
@@ -70,6 +71,28 @@ class _storyCard extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: Palette.storyGradient,
               borderRadius: BorderRadius.circular(12.0)),
+        ),
+        Positioned(
+          top: 8.0,
+          left: 8.0,
+          child: isAddStory
+              ? Container(
+                  height: 40.0,
+                  width: 40.0,
+                  decoration: BoxDecoration(
+                      color: Colors.white, shape: BoxShape.circle),
+                  child: Center(
+                    child: TextButton(
+                      onPressed: (() => print("Add Story")),
+                      child: Icon(
+                        Icons.add,
+                        size: 25,
+                        color: Palette.facebookBlue,
+                      ),
+                    ),
+                  ),
+                )
+              : ProfileAvatar(imageUrl: story.user.imageUrl),
         )
       ],
     );
