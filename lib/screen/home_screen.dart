@@ -1,5 +1,6 @@
 import 'package:facebook/config/palette.dart';
 import 'package:facebook/data/data.dart';
+import 'package:facebook/models/post_model.dart';
 import 'package:facebook/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +56,16 @@ class HomeScreen extends StatelessWidget {
             stories: stories,
           )),
         ),
-        SliverFillRemaining(
-          child: Column(
-            children: [Text('some cool text here')],
-          ),
-        )
+        SliverList(
+            delegate: SliverChildBuilderDelegate((context, index) {
+          final Post post = posts[index];
+          return PostContainer(post: post);
+        }, childCount: posts.length)),
+        // SliverFillRemaining(
+        //   child: Column(
+        //     children: [Text('some cool text here')],
+        //   ),
+        // )
       ]),
     );
   }
