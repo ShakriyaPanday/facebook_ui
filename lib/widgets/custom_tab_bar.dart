@@ -1,9 +1,10 @@
+import 'package:facebook/config/palette.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavBar extends StatelessWidget {
   final List<IconData> icons;
   final int selectIndex;
-  final Function onPressed;
+  final Function(int) onPressed;
 
   const CustomNavBar(
       {super.key,
@@ -12,6 +13,16 @@ class CustomNavBar extends StatelessWidget {
       required this.onPressed});
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return TabBar(
+      padding: EdgeInsets.zero,
+      indicator: const BoxDecoration(
+          border: Border(
+              top: BorderSide(
+        color: Palette.facebookBlue,
+        width: 3.0,
+      ))),
+      tabs: icons.map((e) => Icon(e)).toList(),
+      onTap: onPressed,
+    );
   }
 }
