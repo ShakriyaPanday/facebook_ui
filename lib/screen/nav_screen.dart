@@ -25,8 +25,17 @@ class _NavScreenState extends State<NavScreen> {
     MdiIcons.bellOutline,
     Icons.menu
   ];
+  int _selectIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return DefaultTabController(
+        length: _icons.length,
+        child: Scaffold(
+          bottomNavigationBar: CustomNavBar(
+              icons = _icons,
+              selectIndex = _selectIndex,
+              onPressed = ((index) => setState(() => _selectIndex = index))),
+          body: _screens[_selectIndex],
+        ));
   }
 }
