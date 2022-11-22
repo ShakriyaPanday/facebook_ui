@@ -21,7 +21,21 @@ class CustomNavBar extends StatelessWidget {
         color: Palette.facebookBlue,
         width: 3.0,
       ))),
-      tabs: icons.map((e) => Icon(e)).toList(),
+      tabs: icons
+          .asMap()
+          .map((i, e) => MapEntry(
+                i,
+                Tab(
+                  icon: Icon(
+                    e,
+                    color:
+                        i == selectIndex ? Palette.facebookBlue : Colors.black,
+                    size: 30.0,
+                  ),
+                ),
+              ))
+          .values
+          .toList(),
       onTap: onPressed,
     );
   }

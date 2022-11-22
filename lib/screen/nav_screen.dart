@@ -43,11 +43,13 @@ class _NavScreenState extends State<NavScreen> {
     return DefaultTabController(
         length: _icons.length,
         child: Scaffold(
-          bottomNavigationBar: CustomNavBar(
-              icons: _icons,
-              selectIndex: _selectIndex,
-              onPressed: ((index) => setState(() => _selectIndex = index))),
-          body: _screens[_selectIndex],
-        ));
+            bottomNavigationBar: CustomNavBar(
+                icons: _icons,
+                selectIndex: _selectIndex,
+                onPressed: ((index) => setState(() => _selectIndex = index))),
+            body: IndexedStack(
+              index: _selectIndex,
+              children: _screens,
+            )));
   }
 }
