@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook/config/palette.dart';
 import 'package:facebook/data/data.dart';
 import 'package:facebook/models/post_model.dart';
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           systemOverlayStyle: SystemUiOverlayStyle.light,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Text(
+          title: const Text(
             "facebook",
             style: TextStyle(
               fontSize: 28.0,
@@ -42,6 +43,7 @@ class HomeScreen extends StatelessWidget {
             child: CreatePostContainer(
           currentUser: currentUser,
         )),
+
         SliverPadding(
           padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
           sliver: SliverToBoxAdapter(
